@@ -16,10 +16,7 @@ describe('SongQueueView', function() {
     ]);
   });
 
-<<<<<<< HEAD
-  it('creates SongQueueEntryViews for each queued song & renders them', function(){
-    spyOn(SongQueueEntryView.prototype, 'render').andCallThrough();
-    view = new SongQueueView({collection: fakeSongs});
+
 =======
   xit('creates SongQueueEntryViews for each queued song & renders them', function(){
     spyOn(MyTunes.Views.SongQueueEntryView.prototype, 'render').andCallThrough();
@@ -29,10 +26,7 @@ describe('SongQueueView', function() {
     expect(SongQueueEntryView.prototype.render).toHaveBeenCalled();
   });
 
-<<<<<<< HEAD
-  it('renders when add or remove event fires from the song queue collection', function(){
-    spyOn(SongQueueView.prototype, 'render').andCallThrough();
-    view = new SongQueueView({collection: fakeSongs});
+
 =======
   xit('renders when add or remove event fires from the song queue collection', function(){
     spyOn(MyTunes.Views.SongQueueView.prototype, 'render').andCallThrough();
