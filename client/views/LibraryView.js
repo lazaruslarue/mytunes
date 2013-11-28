@@ -20,6 +20,6 @@ MyTunes.Views.LibraryView = Backbone.View.extend({
         return new MyTunes.Views.LibraryEntryView({model: song}).render();
       })
     );
-  }
+  }, 
 
 });
