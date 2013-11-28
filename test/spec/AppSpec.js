@@ -18,8 +18,8 @@ describe('App', function() {
   });
 
   it('creates a song queue on initialize', function(){
-    debugger;
-    expect(app.get('songQueue') instanceof SongQueue).toBeTruthy();
+    
+    expect(app.get('songQueue') instanceof MyTunes.Collections.SongQueue).toBeTruthy();
   });
 
   it('sets the current song when a "play" event is fired', function(){
