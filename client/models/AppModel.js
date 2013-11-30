@@ -23,6 +23,8 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
     }, this);
 
+    
+
     // params.library.on('ended', function(){
     //   debugger;
     //   this.set('currentSong', this.get('songQueue').pop())

@@ -19,7 +19,7 @@ describe('SongQueue', function() {
     playSpy.reset();
   });
 
-  xdescribe('when a song is added', function() {
+  describe('when a song is added', function() {
     describe('when it is the only song in the song queue', function() {
       it('plays it', function() {
         var songQueue = new MyTunes.Collections.SongQueue();

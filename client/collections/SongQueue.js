@@ -6,5 +6,9 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   initialize: function(){
     
+  },
+
+  playFirst: function() {
+    debugger;
   }
 });
