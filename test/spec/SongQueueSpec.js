@@ -38,7 +38,7 @@ describe('SongQueue', function() {
   });
 
   describe('when a song ends', function() {
-    xit('removes the song from the queue', function() {
+    it('removes the song from the queue', function() {
       var songQueue = new MyTunes.Collections.SongQueue([songData1, songData2]);
       song2 = songQueue.at(1);
       expect(songQueue.length).toEqual(2);

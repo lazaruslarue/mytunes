@@ -6,16 +6,15 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   initialize: function(){
     this.on('add', function(){
-      if (this.models.length === 1)
+      if (this.length === 1)
       this.playFirst();
+    });
+    this.on('ended', function(){
+      this.remove(this.at(0));
     })
   },
 
   playFirst: function() {
-    debugger;
-    // if (this.models.at(0)) {
-    //   debugger;
-    // }
   }
 
 });

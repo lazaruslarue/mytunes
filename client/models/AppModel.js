@@ -8,6 +8,7 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
     this.set('currentSong', new MyTunes.Models.SongModel());
     this.set('songQueue', new MyTunes.Collections.SongQueue());
 
+
     /* Note that 'this' is passed as the third argument. That third argument is
     the context. The 'play' handler will always be bound to that context we pass in.
     In this example, we're binding it to the App. This is helpful because otherwise
@@ -23,12 +24,6 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
     }, this);
 
- 
-
-    // params.library.on('ended', function(){
-    //   debugger;
-    //   this.set('currentSong', this.get('songQueue').pop())
-    // }, this)
   }
 
 });
