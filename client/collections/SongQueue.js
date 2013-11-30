@@ -5,10 +5,12 @@ window.MyTunes.Collections = window.MyTunes.Collections || {};
 MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   initialize: function(){
-    
+    this.on('add', function(){
+      this.playFirst();
+    })
   },
 
   playFirst: function() {
-    debugger;
   }
+
 });
