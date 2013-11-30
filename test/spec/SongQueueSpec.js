@@ -65,7 +65,7 @@ describe('SongQueue', function() {
   });
 
   describe('when a song is dequeued', function() {
-    xit('removes the song', function() {
+    it('removes the song', function() {
       removeSpy = spyOn(MyTunes.Collections.SongQueue.prototype, 'remove').andCallThrough();
       var songQueue = new MyTunes.Collections.SongQueue(songData1);
       songQueue.at(0).dequeue();
