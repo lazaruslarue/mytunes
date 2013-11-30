@@ -74,7 +74,7 @@ describe('SongQueue', function() {
   });
 
   describe('playFirst', function() {
-    xit('plays the first song in the queue', function() {
+    it('plays the first song in the queue', function() {
       spyOn(MyTunes.Models.SongModel.prototype, 'play').andCallThrough();
       var songQueue = new MyTunes.Collections.SongQueue(songData1);
       songQueue.playFirst();
