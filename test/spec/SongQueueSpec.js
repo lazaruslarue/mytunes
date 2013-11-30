@@ -19,9 +19,9 @@ describe('SongQueue', function() {
     playSpy.reset();
   });
 
-  describe('when a song is added', function() {
+  xdescribe('when a song is added', function() {
     describe('when it is the only song in the song queue', function() {
-      xit('plays it', function() {
+      it('plays it', function() {
         var songQueue = new MyTunes.Collections.SongQueue();
         songQueue.add(songData1);
         expect(playSpy).toHaveBeenCalled();
