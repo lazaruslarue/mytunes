@@ -11,6 +11,7 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
     });
     this.on('ended', function(){
       this.remove(this.at(0));
+      this.playFirst();
     })
   },
 

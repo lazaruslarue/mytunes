@@ -24,6 +24,7 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
     }, this);
 
+
   }
 
 });
