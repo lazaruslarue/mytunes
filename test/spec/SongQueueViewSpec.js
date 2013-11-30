@@ -16,11 +16,12 @@ describe('SongQueueView', function() {
     ]);
   });
 
-  xit('creates SongQueueEntryViews for each queued song & renders them', function(){
-    spyOn(MyTunes.Views.SongQueueEntryView.prototype, 'render').andCallThrough();
+  it('creates SongQueueEntryViews for each queued song & renders them', function(){
+    debugger;
+    spyOn(MyTunes.Views.SongQueueView.prototype, 'render').andCallThrough();
     view = new MyTunes.Views.SongQueueView({collection: fakeSongs});
     view.render();
-    expect(SongQueueEntryView.prototype.render).toHaveBeenCalled();
+    expect(MyTunes.Views.SongQueueView.prototype.render).toHaveBeenCalled();
   });
 
   xit('renders when add or remove event fires from the song queue collection', function(){
