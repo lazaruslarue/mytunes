@@ -5,9 +5,7 @@ window.MyTunes.Collections = window.MyTunes.Collections || {};
 MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   initialize: function(){
-<<<<<<< HEAD
-    
-=======
+
     this.on('add', function(){
       if (this.length === 1)
         this.playFirst();
@@ -23,7 +21,6 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   playFirst: function() {
     this.at(0).play();
->>>>>>> jasminetests
   }
 
 });

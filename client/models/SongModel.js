@@ -11,9 +11,7 @@ MyTunes.Models.SongModel = Backbone.Model.extend({
   play: function(){
     // Triggering an event here will also trigger the event on the collection
     this.trigger('play', this);
-<<<<<<< HEAD
-  }
-=======
+
     this.set('playCount', this.get('playCount')+1);
   },
 
@@ -29,5 +27,4 @@ MyTunes.Models.SongModel = Backbone.Model.extend({
     this.collection.remove(this);
   },
 
->>>>>>> jasminetests
 });
