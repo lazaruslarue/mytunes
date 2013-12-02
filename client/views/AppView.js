@@ -8,6 +8,7 @@ MyTunes.Views.AppView = Backbone.View.extend({
     this.playerView = new MyTunes.Views.PlayerView({model: this.model.get('currentSong')});
     this.libraryView = new MyTunes.Views.LibraryView({collection: this.model.get('library')});
     this.songQueueView = new MyTunes.Views.SongQueueView({collection: this.model.get('songQueue')});
+    
 
     this.model.on('change:currentSong', function(model){
       this.playerView.setSong(model.get('currentSong'));
@@ -16,7 +17,6 @@ MyTunes.Views.AppView = Backbone.View.extend({
   },
 
   render: function() {
-    debugger;
     return this.$el.html([
       this.playerView.$el,
       this.libraryView.$el,
