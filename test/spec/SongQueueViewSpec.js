@@ -16,19 +16,27 @@ describe('SongQueueView', function() {
     ]);
   });
 
+<<<<<<< HEAD
 
 =======
   xit('creates SongQueueEntryViews for each queued song & renders them', function(){
+=======
+  it('creates SongQueueEntryViews for each queued song & renders them', function(){
+>>>>>>> jasminetests
     spyOn(MyTunes.Views.SongQueueEntryView.prototype, 'render').andCallThrough();
     view = new MyTunes.Views.SongQueueView({collection: fakeSongs});
 >>>>>>> 73b2f3fe83da5e048bddf3871f9f363210c45db4
     view.render();
-    expect(SongQueueEntryView.prototype.render).toHaveBeenCalled();
+    expect(MyTunes.Views.SongQueueEntryView.prototype.render).toHaveBeenCalled();
   });
 
+<<<<<<< HEAD
 
 =======
   xit('renders when add or remove event fires from the song queue collection', function(){
+=======
+  it('renders when add or remove event fires from the song queue collection', function(){
+>>>>>>> jasminetests
     spyOn(MyTunes.Views.SongQueueView.prototype, 'render').andCallThrough();
     view = new MyTunes.Views.SongQueueView({collection: fakeSongs});
 >>>>>>> 73b2f3fe83da5e048bddf3871f9f363210c45db4
