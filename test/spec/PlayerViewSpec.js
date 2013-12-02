@@ -28,13 +28,23 @@ describe('PlayerView', function() {
   });
 
   describe('Song transitions', function() {
-    xit('dequeues a song when finished playing & plays the next song', function(){
+    it('dequeues a song when finished playing & plays the next song', function(){
       library.at(0).play();
       var originalSong = appView.playerView.model;
       appView.model.get('songQueue').add(library.at(1));
       // Simulate a song end event being triggered
       $(appView.playerView.el).trigger('ended');
       expect(appView.playerView.model).not.toEqual(originalSong);
+    });
+  });
+
+  describe('Play counts', function() {
+    it('should count plays', function() {
+      library.at(0).play();
+      expect(library.at(0).playCount()).toEqual(1);
+      library.at(1).play();
+      library.at(0).play();
+      expect(library.at(0).playCount()).toEqual(2);
     });
   });
 

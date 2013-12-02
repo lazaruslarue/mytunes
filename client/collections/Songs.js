@@ -4,7 +4,8 @@ window.MyTunes.Collections = window.MyTunes.Collections || {};
 
 MyTunes.Collections.Songs = Backbone.Collection.extend({
 
-  model: MyTunes.Models.SongModel
+  model: MyTunes.Models.SongModel, 
+  defaults: {playedSoFar: 0}
 
 });
 
