@@ -7,6 +7,7 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
   initialize: function(){
 
     this.on('add', function(){
+      console.log('adding')
       if (this.length === 1)
         this.playFirst();
     });
