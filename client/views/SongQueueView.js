@@ -31,6 +31,7 @@ MyTunes.Views.SongQueueView = Backbone.View.extend({
     console.log('testrender')
     // this.$el.children.detach(); 
     this.$el.html('<th>SongQueue</th>').append(
+      
       this.collection.map(function(song){
         return new MyTunes.Views.SongQueueEntryView({model: song}).render();  
       })

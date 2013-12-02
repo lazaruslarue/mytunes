@@ -6,22 +6,30 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   initialize: function(){
 
-    this.on('add', function(){
-      console.log('adding')
-      if (this.length === 1)
-        this.playFirst();
-    });
-    
-    this.on('ended', function(){
-      this.remove(this.at(0));
-      if (this.at(0)) {
-        this.playFirst();
-      }
-    });
+    this.on('add', this.addToQueue, this);
+    this.on('dequeue', this.removeFromQueue, this);
+    this.on('ended', this._playNext, this);
+
+  },
+
+  addToQueue: function(song){
+    if (this.length === 1) {
+      this.playFirst();
+    }
   },
 
   playFirst: function() {
     this.at(0).play();
-  }
+  }, 
 
+  removeFromQueue: function(song) {
+    this.remove(song);
+  }, 
+  
+  _playNext: function(){
+    this.remove(this.at(0));
+    if (this.at(0)) {
+      this.playFirst();
+    }
+  }
 });
