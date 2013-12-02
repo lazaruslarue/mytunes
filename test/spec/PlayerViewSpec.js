@@ -41,10 +41,10 @@ describe('PlayerView', function() {
   describe('Play counts', function() {
     it('should count plays', function() {
       library.at(0).play();
-      expect(library.at(0).playCount()).toEqual(1);
+      expect(library.at(0).get('playCount')).toEqual(1);
       library.at(1).play();
       library.at(0).play();
-      expect(library.at(0).playCount()).toEqual(2);
+      expect(library.at(0).get('playCount')).toEqual(2);
     });
   });
 

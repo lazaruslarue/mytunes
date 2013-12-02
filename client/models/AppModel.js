@@ -19,12 +19,11 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       this.set('currentSong', song);
     }, this);
     
-
-    params.library.on('enqueue', function(song){ // i think this is a listner
-      this.get('songQueue').add(song);
+    params.library.on('enqueue', function(song){ // this is an event listner
+      if (this.get('currentSong') !== song) {
+        this.get('songQueue').add(song); // this is an event
+      }
     }, this);
-
-
   }
 
 });

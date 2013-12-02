@@ -6,10 +6,15 @@ MyTunes.Views.LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
+  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td><td><%= playCount %></td>'),
+
+  initialize: function() {
+    this.listenTo(this.model, 'change', this.render)
+  },
 
   events: {
     'click': function() {
+      debugger;
       this.model.play();
       this.model.enqueue();
     }
@@ -17,6 +22,5 @@ MyTunes.Views.LibraryEntryView = Backbone.View.extend({
 
   render: function(){
     return this.$el.html(this.template(this.model.attributes));
-  }
-
+  }, 
 });
