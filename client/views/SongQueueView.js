@@ -15,21 +15,18 @@ MyTunes.Views.SongQueueView = Backbone.View.extend({
     }
   },
   initialize: function() {
-    this.collection.map(function(song){
-      return new MyTunes.Views.SongQueueEntryView({model: song}).render();
-    });
-    this.collection.on('add remove', this.render, this);
-    // this.render();
-    
+    this.$el.html('<th>SongQueue</th>');
+    this.collection.on('add remove', this.render, this );
   },
-  render: function() {
 
+  render: function() {
     this.collection.each(this.renderEntry, this);
     return this.$el
   },
 
   renderEntry: function(song) {
     var view = new MyTunes.Views.SongQueueEntryView({model: song});
-    view.render();
+    view.render()
+
   }
 });

@@ -16,6 +16,7 @@ MyTunes.Views.LibraryEntryView = Backbone.View.extend({
     'click': function() {
       this.model.play();
       this.model.enqueue();
+      
     }
   },
 
