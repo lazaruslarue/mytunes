@@ -32,7 +32,9 @@ describe('SongQueueView', function() {
       url: '/test/testsong3.mp3',
       title:'test song 3'
     });
-    view.collection.pop();
+
+    debugger;
+    view.collection.remove(view.collection.at(0));
     expect(view.render.callCount).toEqual(2);
   });
 

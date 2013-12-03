@@ -14,30 +14,22 @@ MyTunes.Views.SongQueueView = Backbone.View.extend({
       console.log('removeButton clicked on song');
     }
   },
-
   initialize: function() {
     this.collection.map(function(song){
       return new MyTunes.Views.SongQueueEntryView({model: song}).render();
     });
-
-    this.collection.on('add', this.render);
-    
-    this.collection.on('remove', this.render);
-    this.render();
+    this.collection.on('add remove', this.render, this);
+    // this.render();
     
   },
-
   render: function() {
-    console.log('testrender')
-    // this.$el.children.detach(); 
-    this.$el.html('<th>SongQueue</th>').append(
-      
-      this.collection.map(function(song){
-        return new MyTunes.Views.SongQueueEntryView({model: song}).render();  
-      })
-      
-    );
-    
+
+    this.collection.each(this.renderEntry, this);
+    return this.$el
   },
 
+  renderEntry: function(song) {
+    var view = new MyTunes.Views.SongQueueEntryView({model: song});
+    view.render();
+  }
 });
