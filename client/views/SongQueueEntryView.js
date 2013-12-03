@@ -10,6 +10,7 @@ MyTunes.Views.SongQueueEntryView = Backbone.View.extend({
   template: _.template('<td>(<%= artist %>)</td><td><%= title %></td><td><%= playCount %></td>'),
 
   initialize: function() {
+    this.listenTo(this.model, 'change', this.render)
   },
 
   events: {
