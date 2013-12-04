@@ -21,6 +21,7 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
   }, 
 
   removeFromQueue: function(song) {
+    console.log('removed ', song)
     this.remove(song);
   }, 
   

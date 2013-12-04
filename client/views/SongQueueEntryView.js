@@ -4,23 +4,28 @@ window.MyTunes.Views = window.MyTunes.Views || {};
 
 MyTunes.Views.SongQueueEntryView = Backbone.View.extend({
   
-  tagName: 'tr',
+  tagName: 'li',
   className: 'songQueueSong',
 
-  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td><td><%= playCount %></td>'),
+  template: _.template('<span className="songQueueSong">(<%= artist %>) <%= title %> <%= playCount %></span> <button class="removeButton">'),
 
   initialize: function() {
     this.listenTo(this.model, 'change', this.render)
   },
 
   events: {
-    'click': function(){
-      this.model.play();
-    },
+    // 'click': function(){
+    //   this.model.play();
+    // },
+    'click .removeButton': 'removeClick'
   },
 
   render: function () {
     return this.$el.html(this.template(this.model.attributes));
-  }  
+  },
+
+  removeClick: function(){
+    this.model.dequeue();
+  }
   
 });

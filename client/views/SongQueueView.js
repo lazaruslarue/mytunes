@@ -4,19 +4,15 @@ window.MyTunes.Views = window.MyTunes.Views || {};
 
 MyTunes.Views.SongQueueView = Backbone.View.extend({
 
-  tagName: 'table',
+  tagName: 'ul',
   className: 'songQueue',
   events: {
-    'click .songQueueSong': function() {
-      console.log('song in songQueue clicked');
-    },
-    'click .removeButton': function() {
-      console.log('removeButton clicked on song');
-    }
+    'click': 'queueClickEvent',
+    'click .button': 'buttonClick',
   },
   initialize: function() {
     this.$el.html('<th>SongQueue</th>');
-    this.collection.on('add remove', this.render, this );
+    this.collection.on('add dequeue', this.render, this );
     this.render();
   },
 
@@ -32,5 +28,9 @@ MyTunes.Views.SongQueueView = Backbone.View.extend({
         return new MyTunes.Views.SongQueueEntryView({model: song}).render()
       })
     );
+  },
+
+  queueClickEvent: function() {
+    this.trigger('dequeue', this.model)
   }
 });
